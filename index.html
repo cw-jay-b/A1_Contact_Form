@@ -21,38 +21,33 @@
 
     <title>Assignment1 | Contact form</title>
   </head>
-  <body>
-    <main>
+  <body class="w-full">
+    <main class="container w-full">
 
-      <div class="success-message" id="successMessage" style="display: none;"> 
-        <span style="display: flex;align-items: center;">
-          <img src="assets\images\icon-success-check.svg" alt="success_img" style="max-width: 16px;">
-          <span style="font-weight: 700;margin-left: 0.5rem;font-size: 12px;">Message Sent!</span>
+      <div class="success-message" id="successMessage"> 
+        <span>
+          <img src="assets\images\icon-success-check.svg" alt="success_img">
+          <span>Message Sent!</span>
         </span>
-          <p style="font-weight: 400;margin-top: 0.5rem;text-align: left;">
-            Thanks for completing the form. We'll be in touch soon!</p>
+          <p>Thanks for completing the form. We'll be in touch soon!</p>
           
       </div>
 
-      <h1>Contact Us</h1>
+      <h1 class="main-heading w-full">Contact Us</h1>
 
-      <form action="#" class="form-wrapper">
+      <form action="#" class="form-wrapper w-full">
 
-        <div class="form-input-wrapper" id="name-input-wrapper">
-          <div style="
-            width: 100%;
-        ">
+        <div class="form-input-wrapper w-full" id="name-input-wrapper">
+          <div class="w-full">
             <label for="fname">First Name<span class="required-input">*</span></label>
-            <input type="text" onkeydown="return /[a-z]/i.test(event.key)" id="fname" name="fname">
+            <input class="input-field w-full" type="text" onkeydown="return /[a-z]/i.test(event.key)" id="fname" name="fname">
         
             <div class="error">This field is required</div>
           </div>
         
-          <div style="
-            width: 100%;
-        ">
+          <div class="w-full">
             <label for="lname">Last Name<span class="required-input">*</span></label>
-            <input type="text" onkeydown="return /[a-z]/i.test(event.key)" id="lname" name="lname">
+            <input class="input-field w-full" type="text" onkeydown="return /[a-z]/i.test(event.key)" id="lname" name="lname">
 
             <!-- <input type="text" pattern="  [A-Z][a-zA-Z'-]+(?:\s[A-Z][a-zA-Z'-]+)?" id="lname" name="lname"> -->
         
@@ -61,39 +56,31 @@
           </div>
         </div>
 
-        <div class="form-input-wrapper">
+        <div class="form-input-wrapper w-full">
           <label for="email"
             >Email Address<span class="required-input">*</span></label
           >
 
-          <input type="email" id="email" name="email" />
+          <input class="input-field w-full" type="email" id="email" name="email" />
 
           <div class="error">Please enter a valid email address</div>
         </div>
 
-        <div class="form-input-wrapper">
+        <div class="form-input-wrapper w-full">
           <div id="query-label">
             Query type <span class="required-input">*</span>
           </div>
 
           <div class="radio-wrapper">
-            <span class="radio-input-wrapper">
-              <input
-                type="radio"
-                id="gen-enq"
-                name="query-type"
-                value="General Enquiry"
+            <span class="radio-input-wrapper w-full">
+              <input class="input-field w-full" type="radio" id="gen-enq" name="query-type" value="General Enquiry"
               />
 
-              <label for="gen-enq">General Enquiry</label>
+              <label class="w-full" for="gen-enq">General Enquiry</label>
             </span>
 
-            <span class="radio-input-wrapper">
-              <input
-                type="radio"
-                id="supp-enq"
-                name="query-type"
-                value="Support Enquiry"
+            <span class="radio-input-wrapper w-full">
+              <input class="input-field w-full" type="radio" id="supp-enq" name="query-type" value="Support Enquiry"
               />
 
               <label for="supp-enq">Support Enquiry</label>
@@ -103,17 +90,17 @@
           <div class="error">Please select a query type</div>
         </div>
 
-        <div class="form-input-wrapper">
+        <div class="form-input-wrapper w-full">
           <label for="msg">Message<span class="required-input">*</span></label>
 
-          <textarea name="msg" id="msg" rows="3"></textarea>
+          <textarea class="msg-box w-full" name="msg" id="msg" rows="3"></textarea>
 
           <div class="error">This field is required</div>
         </div>
 
         <div style="width: 100%; margin-top: 1rem">
           <div id="form-consent-wrapper">
-            <input type="checkbox" id="consent" name="consent" />
+            <input class="input-field w-full" type="checkbox" id="consent" name="consent" />
 
             <label for="consent"
               >I consent to being contacted by the team<span
@@ -128,7 +115,7 @@
           </div>
         </div>
 
-        <button type="submit">Submit</button>
+        <button class="submit-btn w-full" type="submit">Submit</button>
       </form>
     </main>
 
