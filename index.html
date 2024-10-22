@@ -1,0 +1,125 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Assignment1 | Contact form</title>
+  </head>
+  <body class="w-full">
+    <main class="container w-full">
+
+      <div class="success-message" id="successMessage"> 
+        <span>
+          <img src="assets\images\icon-success-check.svg" alt="success_img">
+          <span>Message Sent!</span>
+        </span>
+          <p>Thanks for completing the form. We'll be in touch soon!</p>
+          
+      </div>
+
+      <h1 class="main-heading w-full">Contact Us</h1>
+
+      <form action="#" class="form-wrapper w-full">
+
+        <div class="form-input-wrapper w-full" id="name-input-wrapper">
+          <div class="w-full">
+            <label for="fname">First Name<span class="required-input">*</span></label>
+            <input class="input-field w-full" type="text" onkeydown="return /[a-z]/i.test(event.key)" id="fname" name="fname">
+        
+            <div class="error">This field is required</div>
+          </div>
+        
+          <div class="w-full">
+            <label for="lname">Last Name<span class="required-input">*</span></label>
+            <input class="input-field w-full" type="text" onkeydown="return /[a-z]/i.test(event.key)" id="lname" name="lname">
+
+            <!-- <input type="text" pattern="  [A-Z][a-zA-Z'-]+(?:\s[A-Z][a-zA-Z'-]+)?" id="lname" name="lname"> -->
+        
+            <div class="error">This field is required</div>
+            <!-- <div class="errorName">Not a valid first name</div> -->
+          </div>
+        </div>
+
+        <div class="form-input-wrapper w-full">
+          <label for="email"
+            >Email Address<span class="required-input">*</span></label
+          >
+
+          <input class="input-field w-full" type="email" id="email" name="email" />
+
+          <div class="error">Please enter a valid email address</div>
+        </div>
+
+        <div class="form-input-wrapper w-full">
+          <div id="query-label">
+            Query type <span class="required-input">*</span>
+          </div>
+
+          <div class="radio-wrapper">
+            <span class="radio-input-wrapper w-full">
+              <input class="input-field w-full" type="radio" id="gen-enq" name="query-type" value="General Enquiry"
+              />
+
+              <label class="w-full" for="gen-enq">General Enquiry</label>
+            </span>
+
+            <span class="radio-input-wrapper w-full">
+              <input class="input-field w-full" type="radio" id="supp-enq" name="query-type" value="Support Enquiry"
+              />
+
+              <label for="supp-enq">Support Enquiry</label>
+            </span>
+          </div>
+
+          <div class="error">Please select a query type</div>
+        </div>
+
+        <div class="form-input-wrapper w-full">
+          <label for="msg">Message<span class="required-input">*</span></label>
+
+          <textarea class="msg-box w-full" name="msg" id="msg" rows="3"></textarea>
+
+          <div class="error">This field is required</div>
+        </div>
+
+        <div style="width: 100%; margin-top: 1rem">
+          <div id="form-consent-wrapper">
+            <input class="input-field w-full" type="checkbox" id="consent" name="consent" />
+
+            <label for="consent"
+              >I consent to being contacted by the team<span
+                class="required-input"
+                >*</span
+              ></label
+            >
+          </div>
+
+          <div class="error">
+            To submit this form, please consent to being contacted
+          </div>
+        </div>
+
+        <button class="submit-btn w-full" type="submit">Submit</button>
+      </form>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="validate.js"></script>
+  </body>
+</html>

@@ -1,0 +1,237 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --white: hsl(0, 0%, 100%);
+  --error: hsl(0, 66%, 54%);
+  --grey-md: hsl(186, 15%, 59%);
+  --grey-dark: hsl(187, 24%, 22%);
+  --light-green: hsl(148, 38%, 91%);
+  --md-green: hsl(169, 82%, 27%);
+  --dark-green: hsl(171, 83%, 14%);
+}
+
+.w-full{
+  width: 100%;
+}
+
+
+body {
+  font-family: Karla, "Courier New", Courier, monospace;
+  height: 100vh;
+  color: var(--grey-dark);
+  background-color: var(--light-green);
+}
+body,
+.container,
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  background-color: var(--white);
+  border-radius: 1rem;
+  /* width: 40%; */
+  padding: 1rem;
+  width: 30rem;
+  height: fit-content;
+}
+.form-wrapper {
+  gap: 1rem;
+}
+.form-input-wrapper label {
+  font-size: 0.75rem;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+.input-field,
+.msg-box {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--grey-md);
+  outline: none;
+  border-radius: 0.5rem;
+}
+.input-field:hover,
+.msg-box:hover,
+.input-field:focus,
+.msg-box:focus {
+  cursor: pointer;
+  border-color: var(--md-green);
+}
+.radio-input-wrapper {
+  border: 1px solid var(--grey-md);
+  outline: none;
+  border-radius: 0.5rem;
+  display: flex;
+}
+.radio-input-wrapper label {
+  margin: 0.75rem 0.5rem;
+  height: 75%;
+}
+.radio-input-wrapper:hover {
+  cursor: pointer;
+  border-color: var(--md-green);
+}
+.radio-wrapper,
+#form-consent-wrapper,
+#name-input-wrapper {
+  display: flex;
+  gap: 0.5rem;
+}
+.selected {
+  cursor: pointer;
+  border-color: var(--md-green);
+  background-color: var(--light-green);
+}
+
+
+.required-input {
+  color: hsl(169, 82%, 27%);
+  margin: 0.25rem;
+} 
+
+
+
+.input-field[type="checkbox"],
+.input-field[type="radio"] {
+  accent-color: hsl(169, 82%, 27%);
+  width: auto;
+}
+
+.input-field[type="checkbox"]:hover,
+.input-field[type="radio"]:hover {
+  cursor: pointer; 
+}
+
+.input-field[type="checkbox"]:focus {
+  outline: 2px solid hsl(169, 82%, 47%); 
+  outline-offset: 2px; 
+}
+
+.input-field[type="checkbox"]:active {
+  background-color: hsl(169, 82%, 27%); 
+  border: 2px solid hsl(169, 82%, 47%); 
+}
+
+.error, .errorName {
+  display: none;
+  font-size: 0.75rem;
+  color: var(--error);
+  margin-top: 0.5rem;
+}
+label,
+#query-label {
+  font-size: 0.75rem;
+}
+.input-field[type="radio"] {
+  margin-left: 1rem;
+}
+.radio-wrapper label:hover {
+  cursor: pointer;
+}
+
+#query-label {
+  margin: 0.5rem 0;
+}
+
+.main-heading{
+  margin-bottom: 1rem;
+} 
+.submit-btn {
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--md-green);
+  color: var(--white);
+  &:hover, &:focus {
+    cursor: pointer;
+    background-color: var(--dark-green);
+  }
+}
+
+.success-message {
+  position: absolute;
+  top: 0.75rem;
+  display: none;
+  min-width: 20rem;
+  max-width: 30%;
+  padding: 1rem;
+  background-color: #2a4244;
+  color: #fff;
+  text-align: center;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.75rem;
+  animation: fadeIn 0.5s ease-in-out;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.success-message span{
+  font-weight: 700;
+  margin-left: 0.5rem;
+  font-size: 12px;
+}
+.success-message img{
+  max-width: 16px;
+}
+.success-message p{
+  font-weight: 400;
+  margin-top: 0.5rem;
+  text-align: left;
+}
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%; 
+    padding: 1rem;
+  }
+
+  .msg-box {
+    height: auto; 
+  }
+}
+
+@media (max-width: 375px) {
+  .form-wrapper,
+  .form-input-wrapper,
+  #name-input-wrapper,
+  .radio-wrapper {
+    flex-direction: column; 
+  }
+
+  .radio-input-wrapper {
+    flex-direction: row; 
+    align-items: center;
+  }
+
+  .radio-input-wrapper label {
+    margin: 0.5rem; 
+  }
+
+  .msg-box {
+    height: calc(100vw - 32px); 
+    max-height: 300px; 
+  }
+}
+
+
